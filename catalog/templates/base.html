@@ -1,0 +1,15 @@
+{% load js_routes_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% js_routes %}
+  <script src='/static/static/react/dist/iraj.bundle.js' defer type="module"></script>
+</head>
+<body>
+  {{ page|json_script:"page" }}
+  <div id="app"></div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Author List</h1>
+  {% if page.props.page_obj %}
+  <ul>
+    {% for author in page.props.page_obj %}
+      <li>
+        <a href="{{ author.get_absolute_url }}">{{ author }}</a> 
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no authors in the library.</p>
+  {% endif %}
+{% endblock %}

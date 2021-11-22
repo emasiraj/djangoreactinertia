@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "parcel": "parcel watch kabood/static-v2/react/* -d kabood/static-v2/react/dist/ --public-url kabood/static-v2/react/dist/",
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "@inertiajs/inertia": "latest",
+    "@inertiajs/inertia-react": "latest",
+    "axios": "latest",
+    "lodash": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "uuidv4": "latest"
+  },
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
+    "@babel/preset-react": "latest",
+    "babel-loader": "latest",
+    "css-loader": "latest",
+    "parcel-bundler": "latest",
+    "style-loader": "latest",
+    "webpack": "latest",
+    "webpack-cli": "latest"
+  }
+}
