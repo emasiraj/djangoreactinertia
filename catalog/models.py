@@ -27,6 +27,8 @@ class Book(models.Model):
     
     genre = models.ManyToManyField(Genre, help_text='Select a genre for this book')
 
+    cover = models.ImageField(null=True, upload_to='img/covers')
+
     def __str__(self): 
         """String for representing the Model object."""
         return self.title

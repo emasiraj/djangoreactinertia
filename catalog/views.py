@@ -105,4 +105,19 @@ def react_game(request):
     return render_inertia(request, 'Game')
 
 def add_book(request):
-    return render_inertia(request, 'AddBook')
+    all_authors = Author.objects.all()
+    author_list = serializers.serialize("json", all_authors)
+    author_list = json.loads(author_list)
+
+    return render_inertia(request, 'AddBook', props={'author_list': author_list})
+
+def submit_book(request):
+    if request.method == 'POST':
+        content = request.POST.dict()
+        content['cover'] = request.FILES['cover']
+        content['author'] = get_object_or_404(Author, pk=int(content['author']))
+        
+        book = Book(**content)  
+        book.save()
+
+        return render_inertia(request, 'BookSubmittedView')
